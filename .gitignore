@@ -1,0 +1,34 @@
+# Build outputs
+/target/
+/*.jar
+
+# Runtime data and logs
+/data/
+/app.log
+*.log
+
+# Local configuration
+/config/app.properties
+
+# IDE and tooling
+/.idea/
+/.vscode/
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Temp files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+*.bak
+*.old
