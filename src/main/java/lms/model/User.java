@@ -1,8 +1,8 @@
 package lms.model;
-// TODO: review field validation
-// TODO: add helper methods
 
 public abstract class User implements Identifiable<String> {
+    private String id;
+    private String name;
     private String email;
 
     protected User() {
