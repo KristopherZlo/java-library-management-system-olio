@@ -1,8 +1,8 @@
 package lms.model;
-// TODO: review field validation
-// TODO: add helper methods
 
 public class Book implements Identifiable<String> {
+    private String bookId;
+    private String isbn;
     private String title;
     private String author;
     private int year;
