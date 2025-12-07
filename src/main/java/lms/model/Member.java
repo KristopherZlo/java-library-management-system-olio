@@ -1,13 +1,13 @@
 package lms.model;
-// TODO: review field validation
-// TODO: add helper methods
 
 public class Member extends User {
+    private MemberType type;
 
     public Member() {
     }
 
     public Member(String memberId, String name, String email, MemberType type) {
+        super(memberId, name, email);
         this.type = type;
     }
 
