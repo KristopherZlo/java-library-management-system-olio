@@ -1,10 +1,10 @@
 package lms.model;
-// TODO: review field validation
-// TODO: add helper methods
 
 import java.time.LocalDate;
 
 public class Loan implements Identifiable<String> {
+    private String loanId;
+    private String copyId;
     private String memberId;
     private LocalDate loanDate;
     private LocalDate dueDate;
