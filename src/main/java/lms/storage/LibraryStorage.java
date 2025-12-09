@@ -1,6 +1,4 @@
 package lms.storage;
-// TODO: review transaction flow
-// TODO: add metrics hooks
 
 import lms.model.Book;
 import lms.model.BookCopy;
@@ -10,7 +8,9 @@ import lms.model.Reservation;
 import java.util.function.Supplier;
 
 public interface LibraryStorage extends AutoCloseable {
+    Repository<Book, String> books();
 
+    Repository<BookCopy, String> copies();
 
     Repository<Member, String> members();
 
