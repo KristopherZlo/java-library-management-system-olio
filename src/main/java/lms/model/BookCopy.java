@@ -1,8 +1,8 @@
 package lms.model;
-// TODO: review field validation
-// TODO: add helper methods
 
 public class BookCopy implements Identifiable<String> {
+    private String copyId;
+    private String isbn;
     private CopyStatus status;
 
     public BookCopy() {
