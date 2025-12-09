@@ -1,10 +1,10 @@
 package lms.model;
-// TODO: review field validation
-// TODO: add helper methods
 
 import java.time.LocalDate;
 
 public class Reservation implements Identifiable<String> {
+    private String reservationId;
+    private String isbn;
     private String memberId;
     private LocalDate createdAt;
     private ReservationStatus status;
