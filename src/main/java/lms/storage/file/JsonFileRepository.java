@@ -1,6 +1,4 @@
 package lms.storage.file;
-// TODO: review json schema
-// TODO: add backup handling
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -22,6 +20,8 @@ import lms.model.Identifiable;
 import lms.storage.Repository;
 
 public class JsonFileRepository<T extends Identifiable<ID>, ID> implements Repository<T, ID> {
+    private final Path file;
+    private final ObjectMapper mapper;
     private final TypeReference<List<T>> typeReference;
     private final Map<ID, T> store = new LinkedHashMap<>();
     private boolean autoPersist = true;
