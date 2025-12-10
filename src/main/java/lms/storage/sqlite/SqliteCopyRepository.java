@@ -1,6 +1,4 @@
 package lms.storage.sqlite;
-// TODO: tune statements
-// TODO: add retry handling
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -15,8 +13,10 @@ import lms.model.CopyStatus;
 import lms.storage.Repository;
 
 public class SqliteCopyRepository implements Repository<BookCopy, String> {
+    private final SqliteStorage storage;
 
     public SqliteCopyRepository(SqliteStorage storage) {
+        this.storage = storage;
     }
 
     @Override
