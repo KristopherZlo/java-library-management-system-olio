@@ -1,6 +1,4 @@
 package lms.storage.file;
-// TODO: review json schema
-// TODO: add backup handling
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import java.io.IOException;
@@ -24,6 +22,8 @@ import lms.storage.LibraryStorage;
 import lms.storage.Repository;
 
 public class FileStorage implements LibraryStorage {
+    private static final String TX_DIR_NAME = ".lms-tx";
+    private static final String MANIFEST_NAME = "manifest.txt";
     private final Path base;
     private final Object transactionLock = new Object();
     private final List<JsonFileRepository<?, ?>> repositories = new ArrayList<>();
