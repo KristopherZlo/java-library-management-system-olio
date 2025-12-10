@@ -1,6 +1,4 @@
 package lms.storage.sqlite;
-// TODO: tune statements
-// TODO: add retry handling
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,8 +12,10 @@ import lms.model.Book;
 import lms.storage.Repository;
 
 public class SqliteBookRepository implements Repository<Book, String> {
+    private final SqliteStorage storage;
 
     public SqliteBookRepository(SqliteStorage storage) {
+        this.storage = storage;
     }
 
     @Override
