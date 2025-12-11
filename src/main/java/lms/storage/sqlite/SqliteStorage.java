@@ -1,6 +1,4 @@
 package lms.storage.sqlite;
-// TODO: tune statements
-// TODO: add retry handling
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -20,6 +18,8 @@ import lms.storage.LibraryStorage;
 import lms.storage.Repository;
 
 public class SqliteStorage implements LibraryStorage {
+    private final String url;
+    private final ThreadLocal<Connection> transactionConnection = new ThreadLocal<>();
     private final Repository<Book, String> bookRepository;
     private final Repository<BookCopy, String> copyRepository;
     private final Repository<Member, String> memberRepository;
