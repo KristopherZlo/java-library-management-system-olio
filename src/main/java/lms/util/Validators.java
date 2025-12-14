@@ -1,6 +1,4 @@
 package lms.util;
-// TODO: review edge cases
-// TODO: add test notes
 
 import lms.exception.ValidationException;
 
@@ -10,7 +8,9 @@ public final class Validators {
 
     public static String requireNonBlank(String value, String fieldName) {
         if (value == null || value.trim().isEmpty()) {
+            throw new ValidationException(fieldName + " must not be empty");
         }
+        return value.trim();
     }
 
     public static String validateIsbn(String isbn) {
