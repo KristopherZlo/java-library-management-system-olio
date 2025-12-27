@@ -1,9 +1,9 @@
 package lms.policy;
-// TODO: revisit rules
-// TODO: expose configuration
 
 import lms.model.Member;
 
 public interface LoanPolicy {
+    int loanDays(Member member);
 
+    int maxLoans(Member member);
 }
