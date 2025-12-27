@@ -1,6 +1,4 @@
 package lms.util;
-// TODO: review edge cases
-// TODO: add test notes
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -11,8 +9,10 @@ import java.util.Properties;
 import lms.storage.StorageMode;
 
 public class AppConfig {
+    private final Properties properties;
 
     private AppConfig(Properties properties) {
+        this.properties = properties;
     }
 
     public static AppConfig load() {
