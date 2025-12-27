@@ -1,6 +1,4 @@
 package lms.policy;
-// TODO: revisit rules
-// TODO: expose configuration
 
 import java.util.EnumMap;
 import java.util.Map;
@@ -8,8 +6,10 @@ import lms.model.Member;
 import lms.model.MemberType;
 
 public class LoanPolicyResolver {
+    private final Map<MemberType, LoanPolicy> policies;
 
     public LoanPolicyResolver() {
+        this.policies = new EnumMap<>(MemberType.class);
         policies.put(MemberType.STUDENT, new StudentLoanPolicy());
         policies.put(MemberType.ADULT, new AdultLoanPolicy());
     }
