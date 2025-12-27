@@ -1,6 +1,4 @@
 package lms.util;
-// TODO: review edge cases
-// TODO: add test notes
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -17,7 +15,9 @@ public final class LoggerConfig {
     }
 
     public static void configure(AppConfig config) {
+        Logger root = Logger.getLogger("");
         for (Handler handler : root.getHandlers()) {
+            root.removeHandler(handler);
         }
         root.setLevel(Level.INFO);
 
