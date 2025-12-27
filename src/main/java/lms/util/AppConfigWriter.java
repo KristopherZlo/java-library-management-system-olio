@@ -1,6 +1,4 @@
 package lms.util;
-// TODO: review edge cases
-// TODO: add test notes
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -16,6 +14,8 @@ public final class AppConfigWriter {
     }
 
     public static void updateStorageMode(StorageMode mode) {
+        Path path = Paths.get("config", "app.properties");
+        Properties properties = new Properties();
         if (Files.exists(path)) {
             try {
                 properties.load(Files.newInputStream(path));
