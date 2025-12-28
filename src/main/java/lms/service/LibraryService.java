@@ -1,6 +1,4 @@
 package lms.service;
-// TODO: refine workflows
-// TODO: add metrics hooks
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -35,6 +33,8 @@ import lms.util.IdGenerator;
 import lms.util.Validators;
 
 public class LibraryService {
+    private static final int SHORT_QUERY_MAX = 4;
+    private static final double BASE_THRESHOLD = 0.18;
     private static final double SHORT_THRESHOLD = 0.12;
     private static final int FALLBACK_LIMIT = 10;
     private final LibraryStorage storage;
