@@ -1,14 +1,14 @@
 package lms.policy;
-// TODO: revisit rules
-// TODO: expose configuration
 
 import lms.model.Loan;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
 public class PerDayFinePolicy implements FinePolicy {
+    private final long centsPerDay;
 
     public PerDayFinePolicy(long centsPerDay) {
+        this.centsPerDay = centsPerDay;
     }
 
     @Override
