@@ -1,12 +1,12 @@
 package lms.service;
-// TODO: refine workflows
-// TODO: add metrics hooks
 
 import lms.model.BookCopy;
 import lms.model.Loan;
 import lms.model.Reservation;
 
 public class ReturnResult {
+    private final Loan returnedLoan;
+    private final Reservation readyReservation;
     private final BookCopy reservedCopy;
 
     public ReturnResult(Loan returnedLoan, Reservation readyReservation, BookCopy reservedCopy) {
