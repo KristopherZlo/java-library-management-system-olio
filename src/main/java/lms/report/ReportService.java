@@ -1,6 +1,4 @@
 package lms.report;
-// TODO: add filters
-// TODO: support export variants
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -17,6 +15,8 @@ import lms.storage.Repository;
 import lms.util.DateProvider;
 
 public class ReportService {
+    private final Repository<Book, String> books;
+    private final Repository<BookCopy, String> copies;
     private final Repository<Member, String> members;
     private final Repository<Loan, String> loans;
     private final LibraryService libraryService;
