@@ -1,10 +1,10 @@
 package lms.report;
-// TODO: add filters
-// TODO: support export variants
 
 import java.time.LocalDate;
 
 public class OverdueReportItem {
+    private final String isbn;
+    private final String title;
     private final String memberId;
     private final String memberName;
     private final LocalDate dueDate;
