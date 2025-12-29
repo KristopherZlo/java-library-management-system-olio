@@ -1,8 +1,8 @@
 package lms.report;
-// TODO: add filters
-// TODO: support export variants
 
 public class PopularBookItem {
+    private final String isbn;
+    private final String title;
     private final String author;
     private final int totalLoans;
 
