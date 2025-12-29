@@ -1,10 +1,10 @@
 package lms.report;
-// TODO: add filters
-// TODO: support export variants
 
 import java.time.LocalDate;
 
 public class MemberLoanReportItem {
+    private final String loanId;
+    private final String isbn;
     private final String title;
     private final String copyId;
     private final LocalDate loanDate;
