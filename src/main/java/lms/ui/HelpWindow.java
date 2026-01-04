@@ -1,6 +1,4 @@
 package lms.ui;
-// TODO: polish layout
-// TODO: add keyboard shortcuts
 
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.gui2.BasicWindow;
@@ -13,6 +11,8 @@ import com.googlecode.lanterna.gui2.Window;
 
 public class HelpWindow extends BasicWindow {
     public HelpWindow() {
+        super("Help");
+        Panel panel = new Panel(new LinearLayout(Direction.VERTICAL));
         TextBox textBox = new TextBox(new TerminalSize(90, 22), TextBox.Style.MULTI_LINE);
         textBox.setReadOnly(true);
         textBox.setText(buildHelpText());
