@@ -1,6 +1,4 @@
 package lms.ui;
-// TODO: polish layout
-// TODO: add keyboard shortcuts
 
 import com.googlecode.lanterna.gui2.BasicWindow;
 import com.googlecode.lanterna.gui2.Button;
@@ -12,6 +10,8 @@ import com.googlecode.lanterna.gui2.Window;
 
 public class MainMenuWindow extends BasicWindow {
     public MainMenuWindow(UiContext context) {
+        super("Library Management System");
+        Panel panel = new Panel();
         panel.setLayoutManager(new LinearLayout(Direction.VERTICAL));
 
         panel.addComponent(new Label("Use arrows and Enter. Press F1 for help."));
