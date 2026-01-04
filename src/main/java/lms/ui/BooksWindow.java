@@ -1,6 +1,4 @@
 package lms.ui;
-// TODO: polish layout
-// TODO: add keyboard shortcuts
 
 import com.googlecode.lanterna.gui2.BasicWindow;
 import com.googlecode.lanterna.gui2.Button;
@@ -17,6 +15,8 @@ import lms.model.Book;
 import lms.model.CopyStatus;
 
 public class BooksWindow extends BasicWindow {
+    private final UiContext context;
+    private final Table<String> table;
     private String selectedIsbn;
 
     public BooksWindow(UiContext context) {
