@@ -1,6 +1,4 @@
 package lms.ui;
-// TODO: polish layout
-// TODO: add keyboard shortcuts
 
 import com.googlecode.lanterna.gui2.MultiWindowTextGUI;
 import lms.report.CsvExporter;
@@ -9,6 +7,8 @@ import lms.service.LibraryService;
 import lms.util.AppConfig;
 
 public class UiContext {
+    private final MultiWindowTextGUI gui;
+    private final LibraryService libraryService;
     private final ReportService reportService;
     private final CsvExporter csvExporter;
     private final AppConfig config;
