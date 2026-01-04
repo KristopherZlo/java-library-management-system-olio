@@ -1,6 +1,4 @@
 package lms.ui;
-// TODO: polish layout
-// TODO: add keyboard shortcuts
 
 import com.googlecode.lanterna.gui2.MultiWindowTextGUI;
 import com.googlecode.lanterna.gui2.dialogs.ListSelectDialogBuilder;
@@ -17,7 +15,9 @@ public final class DialogUtils {
     }
 
     public static Optional<String> promptText(MultiWindowTextGUI gui, String title, String label, String initial) {
+        String result = TextInputDialog.showDialog(gui, title, label, initial);
         if (result == null) {
+            return Optional.empty();
         }
         return Optional.of(result.trim());
     }
