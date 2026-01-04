@@ -1,6 +1,4 @@
 package lms.report;
-// TODO: add filters
-// TODO: support export variants
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -13,9 +11,11 @@ public class CsvExporter {
     public void export(Path path, List<String> headers, List<String[]> rows) {
         try {
             if (path.getParent() != null) {
+                Files.createDirectories(path.getParent());
             }
             try (BufferedWriter writer = Files.newBufferedWriter(path)) {
                 if (headers != null && !headers.isEmpty()) {
+                    writer.write(join(headers.toArray(new String[0])));
                     writer.newLine();
                 }
                 for (String[] row : rows) {
