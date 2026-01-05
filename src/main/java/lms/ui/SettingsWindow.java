@@ -1,6 +1,4 @@
 package lms.ui;
-// TODO: polish layout
-// TODO: add keyboard shortcuts
 
 import com.googlecode.lanterna.gui2.BasicWindow;
 import com.googlecode.lanterna.gui2.Button;
@@ -13,6 +11,8 @@ import lms.storage.StorageMode;
 import lms.util.AppConfigWriter;
 
 public class SettingsWindow extends BasicWindow {
+    private final UiContext context;
+    private final Label statusLabel;
 
     public SettingsWindow(UiContext context) {
         super("Settings");
