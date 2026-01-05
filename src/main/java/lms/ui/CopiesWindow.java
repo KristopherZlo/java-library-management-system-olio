@@ -1,6 +1,4 @@
 package lms.ui;
-// TODO: polish layout
-// TODO: add keyboard shortcuts
 
 import com.googlecode.lanterna.gui2.BasicWindow;
 import com.googlecode.lanterna.gui2.Button;
@@ -15,6 +13,8 @@ import java.util.Optional;
 import lms.model.BookCopy;
 
 public class CopiesWindow extends BasicWindow {
+    private final UiContext context;
+    private final String bookKey;
     private String resolvedIsbn;
     private final Table<String> table;
     private String selectedCopyId;
