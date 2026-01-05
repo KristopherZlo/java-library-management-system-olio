@@ -1,6 +1,4 @@
 package lms;
-// TODO: add cli flags
-// TODO: add shutdown hook
 
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.gui2.MultiWindowTextGUI;
@@ -28,6 +26,8 @@ import lms.util.SystemDateProvider;
 
 public class Main {
     public static void main(String[] args) {
+        AppConfig config = AppConfig.load();
+        LoggerConfig.configure(config);
 
         LibraryStorage storage = StorageFactory.create(config);
         DateProvider dateProvider = new SystemDateProvider();
