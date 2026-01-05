@@ -1,6 +1,4 @@
 package lms.ui;
-// TODO: polish layout
-// TODO: add keyboard shortcuts
 
 import com.googlecode.lanterna.gui2.BasicWindow;
 import com.googlecode.lanterna.gui2.Button;
@@ -25,6 +23,8 @@ import lms.report.PopularBookItem;
 import lms.report.ReportService;
 
 public class ReportsWindow extends BasicWindow {
+    private final UiContext context;
+    private final Table<String> table;
     private List<String> lastHeaders = new ArrayList<>();
     private List<String[]> lastRows = new ArrayList<>();
 
