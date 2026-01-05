@@ -1,6 +1,4 @@
 package lms.ui;
-// TODO: polish layout
-// TODO: add keyboard shortcuts
 
 import com.googlecode.lanterna.gui2.BasicWindow;
 import com.googlecode.lanterna.gui2.Button;
@@ -22,6 +20,8 @@ import lms.model.Member;
 import lms.service.ReturnResult;
 
 public class LoansWindow extends BasicWindow {
+    private final UiContext context;
+    private final Table<String> table;
     private final CheckBox overdueOnly;
     private String selectedLoanId;
     private String selectedCopyId;
