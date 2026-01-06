@@ -1,6 +1,4 @@
 package lms.policy;
-// TODO: revisit rules
-// TODO: expose configuration
 
 import java.time.LocalDate;
 import lms.model.Loan;
@@ -13,6 +11,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class PolicyTest {
     @Test
     void loanPolicyResolver_returnsPolicyByType() {
+        LoanPolicyResolver resolver = new LoanPolicyResolver();
+        Member student = new Member("M1", "Student", "s@example.com", MemberType.STUDENT);
         Member adult = new Member("M2", "Adult", "a@example.com", MemberType.ADULT);
 
         LoanPolicy studentPolicy = resolver.forMember(student);
