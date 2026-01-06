@@ -1,6 +1,4 @@
 package lms.storage;
-// TODO: review transaction flow
-// TODO: add metrics hooks
 
 import java.nio.file.Path;
 import lms.model.Book;
@@ -17,9 +15,11 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class FileStorageTest {
     @TempDir
+    Path tempDir;
 
     @Test
     void fileStorage_persistsEntities() {
+        FileStorage storage = new FileStorage(tempDir.toString());
         Book book = new Book("9781234567890", "Title", "Author", 2023, "Fiction");
         storage.books().save(book);
         storage.copies().save(new BookCopy("C1", book.getIsbn(), CopyStatus.AVAILABLE));
