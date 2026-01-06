@@ -1,6 +1,4 @@
 package lms.report;
-// TODO: add filters
-// TODO: support export variants
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -13,9 +11,11 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class CsvExporterTest {
     @TempDir
+    Path tempDir;
 
     @Test
     void export_writesCsvFile() throws Exception {
+        CsvExporter exporter = new CsvExporter();
         Path file = tempDir.resolve("report.csv");
         exporter.export(file,
                 Arrays.asList("Col1", "Col2"),
