@@ -1,6 +1,4 @@
 package lms.service;
-// TODO: refine workflows
-// TODO: add metrics hooks
 
 import java.nio.file.Path;
 import java.time.LocalDate;
@@ -30,7 +28,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class LibraryServiceTest {
     @TempDir
+    Path tempDir;
 
+    private LibraryService service;
     private FixedDateProvider dateProvider;
 
     @BeforeEach
