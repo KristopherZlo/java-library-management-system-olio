@@ -1,6 +1,4 @@
 package lms.report;
-// TODO: add filters
-// TODO: support export variants
 
 import java.nio.file.Path;
 import java.time.LocalDate;
@@ -24,7 +22,9 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 
 class ReportServiceTest {
     @TempDir
+    Path tempDir;
 
+    private FileStorage storage;
     private LibraryService service;
     private ReportService reports;
 
