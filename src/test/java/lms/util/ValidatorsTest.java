@@ -1,6 +1,4 @@
 package lms.util;
-// TODO: review edge cases
-// TODO: add test notes
 
 import lms.exception.ValidationException;
 import org.junit.jupiter.api.Test;
@@ -11,6 +9,8 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 class ValidatorsTest {
     @Test
     void requireNonBlank_trimsValue() {
+        String value = Validators.requireNonBlank("  abc  ", "Field");
+        assertEquals("abc", value);
     }
 
     @Test
